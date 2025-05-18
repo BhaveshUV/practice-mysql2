@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/BhaveshUV/practice-mysql2#readme",
   "dependencies": {
-    "@faker-js/faker": "^9.8.0"
+    "@faker-js/faker": "^9.8.0",
+    "dotenv": "^16.5.0",
+    "mysql2": "^3.14.1"
   }
 }
