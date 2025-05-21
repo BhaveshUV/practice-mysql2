@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Username</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form id="editUser" method="POST" action="/users/<%=user.id%>?_method=PATCH">
+        <div class="field">
+            <label for="username">Edit username</label>
+            <input type="text" id="username" name="username" value="<%=user.username%>">
+        </div>
+        <div class="field">
+            <label for="password">Enter password</label>
+            <input type="password" id="password" name="password">
+        </div>
+
+        <div class="field">
+            <label for="">Email-id</label>
+            <input type="text" id="email" name="email" value="<%=user.email%>" disabled>
+        </div>
+        
+        <div>
+            <button class="save">Save</button>
+            <a href="/users"><button type="button" class="cancel">Cancel</button></a>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>ALL USERS</h1>
+    <div id="view-change"><a href="/users-tabular">Click to view in tabular form :)</a></div>
+    <div id="users">
+        <% for(user of users) { %>
+            <div class="user">
+                <div class="img"></div>
+                <div class="username">
+                    @<%=user.username%>
+                    <a href="/users/<%=user.id%>">📝</a>
+                </div>
+                <br>
+                <div class="email">Email<br>
+                    <%=user.email%>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <div id="resource-attribution">
+        <a href="https://www.flaticon.com/ru/free-icons/-" title="avatar icons">Avatar icons by Fantasyou - Flaticon</a>
+        <br>
+        <a href="https://www.pexels.com/photo/person-playing-brown-guitar-1407322/">Guitar photo by 42 North</a>
+    </div>
+</body>
+
+</html>

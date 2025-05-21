@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>ALL USERS</h1>
+    <div id="view-change"><a href="/users">Click to view in cards form :)</a></div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>USERNAME (Edit)</th>
+            <th>EMAIL</th>
+        </tr>
+        <%for(user of users) {%>
+            <tr>
+                <td><%=user.id%></td>
+                <td><div class="username"><%=user.username%> <a href="/users/<%=user.id%>">📝</a></div></td>
+                <td><%=user.email%></td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+body {
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("assets/Guitar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* TABULAR FORM */
+table {
+    margin: auto;
+}
+
+th, td {
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+th {
+    font-weight: 900;
+}
+
+td a {
+    color: black;
+}
+
+td .username {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CARDS FORM */
+
+h1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    color: rgb(59, 65, 105);
+}
+
+#view-change {
+    text-align: center;
+    transform: translateY(-10px);
+}
+
+#users {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.user {
+    width: 15rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 5rem;
+    height: 5rem;
+    background-image: url("assets/user.png");
+    background-size: contain;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.email {
+    font-size: smaller;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
+
+#resource-attribution {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#join-us {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#join-us button {
+    cursor: pointer;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid transparent;
+}
+
+#join-us button:active {
+    border: 2px solid black;
+    background-color: rgb(237, 217, 156);
+}
+
+#editUser {
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+}
+
+#editUser .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+#editUser input {
+    width: 20rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    text-align: center;
+}
+
+#editUser button {
+    cursor: pointer;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: smaller;
+    border: 2px solid transparent;
+    background-color: gainsboro;
+    color: black;
+}
+
+#editUser .save {
+    background-color: rgb(18, 156, 18);
+    color: white;
+}
+
+#editUser button:active {
+    border: 2px solid black;
+}
