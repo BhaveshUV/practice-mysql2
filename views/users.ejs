@@ -10,6 +10,9 @@
 
 <body>
     <h1>ALL USERS</h1>
+    <div id="join-us">
+        <a href="/user"><button>Join us now!</button></a>
+    </div>
     <div id="view-change"><a href="/users-tabular">Click to view in tabular form :)</a></div>
     <div id="users">
         <% for(user of users) { %>
@@ -19,12 +22,12 @@
                     @<%=user.username%>
                     <a href="/users/<%=user.id%>">📝</a>
                 </div>
-                <br>
                 <div class="email">Email<br>
                     <%=user.email%>
                 </div>
+                <a href="/user/<%=user.id%>"><button class="delete">Delete user</button></a>
             </div>
-            <% } %>
+        <% } %>
     </div>
     <div id="resource-attribution">
         <a href="https://www.flaticon.com/ru/free-icons/-" title="avatar icons">Avatar icons by Fantasyou - Flaticon</a>

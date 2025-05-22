@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const { v4: uuidv4 } = require('uuid');
 
 //----------------------------faker pkg----------------------------//
 
@@ -99,6 +100,37 @@ server.get("/users/:id", (req, res) => {
   }
 });
 
+// GET — form to add new user
+server.get("/user", (req, res) => {
+  res.render("signUp.ejs");
+});
+
+// GET — form to delete a user
+server.get("/user/:id", (req, res) => {
+  connection.query("SELECT * FROM user WHERE id = ?", [[req.params.id]], (err, result) => {
+    if (err) return res.status(500).send(err.message);
+    console.log(result[0]);
+    res.render("deleteUser.ejs", { user: result[0] });
+  });
+});
+
+// DELETE — delete a user from database
+server.delete("/user/:id", (req, res) => {
+  connection.query("SELECT * FROM user WHERE id = ?", [[req.params.id]], (err, result) => {
+    if (err) return res.status(500).send(err.message); //for asynchronous (connection/DB) error
+    else if (result.length != 0 && req.body.password == result[0].password) {
+      connection.query("DELETE FROM user WHERE id = ?", [[req.params.id]], (err, result2) => {
+        if (err) return res.status(500).send(err.message); //for asynchronous (connection/DB) error
+        console.log("Deleted result --> ", result2);
+        res.redirect("/users");
+      });
+    } else {
+      console.log("Incorrect password!");
+      res.send("Incorrect password!");
+    }
+  });
+});
+
 // UPDATE — Patch/update Username Route
 server.patch("/users/:id", (req, res) => {
   console.log("req.body --> ", req.body);
@@ -117,4 +149,13 @@ server.patch("/users/:id", (req, res) => {
   } catch (err) {
     res.send("Error: " + err);
   }
+});
+
+// POST — new user on the DB
+server.post("/user", (req, res) => {
+  connection.query("INSERT INTO user (id, username, email, password) VALUES (?)", [[uuidv4(), req.body.username, req.body.email, req.body.password]], (err, result) => {
+    if (err) return res.status(500).send(err.message);
+    console.log("Result of adding a new user --> ", result);
+    res.redirect("/users");
+  });
 });

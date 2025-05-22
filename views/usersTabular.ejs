@@ -10,6 +10,9 @@
 
 <body>
     <h1>ALL USERS</h1>
+    <div id="join-us">
+        <a href="/user"><button>Join us now!</button></a>
+    </div>
     <div id="view-change"><a href="/users">Click to view in cards form :)</a></div>
     <table>
         <tr>
@@ -22,6 +25,7 @@
                 <td><%=user.id%></td>
                 <td><div class="username"><%=user.username%> <a href="/users/<%=user.id%>">📝</a></div></td>
                 <td><%=user.email%></td>
+                <td><a href="/user/<%=user.id%>"><button class="delete">Delete user</button></a></td>
             </tr>
         <%}%>
     </table>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <form id="editUser" method="POST" action="/user">
+        <div class="field">
+            <label for="username">Enter username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div class="field">
+            <label for="">Enter email</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div class="field">
+            <label for="password">Enter password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <button class="save">Sign up</button>
+            <a href="/users"><button type="button" class="cancel">Cancel</button></a>
+        </div>
+    </form>
+</body>
+
+</html>

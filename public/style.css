@@ -11,6 +11,7 @@ body {
 
 /* TABULAR FORM */
 table {
+    padding-top: 0.25rem;
     margin: auto;
 }
 
@@ -44,10 +45,10 @@ h1 {
 
 #view-change {
     text-align: center;
-    transform: translateY(-10px);
 }
 
 #users {
+    padding-top: 0.25rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -64,6 +65,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .img {
@@ -117,7 +119,7 @@ a {
     background-color: rgb(237, 217, 156);
 }
 
-#editUser {
+form {
     width: fit-content;
     padding: 2rem;
     border-radius: 1rem;
@@ -150,7 +152,7 @@ a {
     text-align: center;
 }
 
-#editUser button {
+#editUser button, .delete {
     cursor: pointer;
     width: fit-content;
     padding: 0.25rem 0.5rem;
@@ -164,6 +166,11 @@ a {
 
 #editUser .save {
     background-color: rgb(18, 156, 18);
+    color: white;
+}
+
+#editUser .delete, .delete {
+    background-color: rgb(192, 36, 36);
     color: white;
 }
 
